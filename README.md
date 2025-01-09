@@ -1,4 +1,4 @@
-# Chronicles of Quests and Secrets
+# Chronicles of Quests & Secrets
 
 ## A text based RPG game created using Python
 

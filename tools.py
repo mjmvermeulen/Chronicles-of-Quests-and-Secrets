@@ -9,6 +9,10 @@ player_race: str = ""
 player_class: str = ""
 
 def character_creator():
+    """
+    Helps the player create their character for their adventure,
+    this script should only run at the start of the game
+    """
     global player_name
     global player_gender
     global player_race
@@ -16,7 +20,6 @@ def character_creator():
     # Player Creation
     print("Lets start by creating your hero")
     player_name = input("What is your name?\n").lower().capitalize()
-
 
     player_gender = input("Are you a male/female?\n").lower().capitalize()
     gender_chosen = False
@@ -38,7 +41,17 @@ def character_creator():
     print(class_art.classes)
     print(f"Warrior stats: {class_stats.warrior}")
     print(f"Archer stats: {class_stats.archer}")
-    print(f"Magician stats: {class_stats.magician}")
+    print(f"Magician stats: {class_stats.magician}\n")
+
+    stats_info_request = input("Would you like more information about what each stat does? write 'y' or 'n'\n").lower()
+
+    while stats_info_request != "n":
+        if stats_info_request == "y":
+            utils.player_stat_details()
+        else:
+            print(f"{stats_info_request} is not a valid option please try again.")
+            stats_info_request = input("Would you like more information about what each stat does? write 'y' or 'n'\n").lower()
+
     player_class = input("\nWhich class would you like to play?\n").lower().capitalize()
 
     class_chosen = False
@@ -52,5 +65,3 @@ def character_creator():
         else:
             print(f"{player_class} is not a existing class in this world please choose between: Warrior, Archer or Magician")
             player_class = input("Which class would you like to play?\n").lower().capitalize()
-
-    return

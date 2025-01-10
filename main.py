@@ -6,7 +6,7 @@ import tools
 
 # Main Opening Scene
 print(core_art.primary_logo)
-print("Welcome adventurer to the Chronicles of Quests & Secrets")
+print("\033[1mWelcome adventurer to the Chronicles of Quests & Secrets\033[0m")
 input("Press any key to start your adventure....\n")
 utils.clear_terminal()
 
